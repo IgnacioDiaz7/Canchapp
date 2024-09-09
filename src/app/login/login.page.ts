@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  email: string = '';
+  password: string = '';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
+  onLogin(){
+    console.log('Email:',this.email);
+    console.log('Password:', this.password)
+
+    this.router.navigate(['/home']);
+  }
   ngOnInit() {
   }
 
