@@ -17,5 +17,8 @@ export class HomePage {
 
     loading.present();
   }
+  async canDismiss(data?: any, role?: string) {
+    return role !== 'gesture';
+  }
 
 }
