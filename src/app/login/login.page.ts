@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
+import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,17 +9,35 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage  {
+  loginForm: FormGroup;
   email: string = '';
   password: string = '';
 
-  constructor(private router: Router, private loadingCtrl: LoadingController) { }
+  constructor(private router: Router, private loadingCtrl: LoadingController, private formBuilder: FormBuilder) { 
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(6),
+          Validators.pattern('^(?=.*[A-Z])[A-Za-z0-9]+$')
+        ]
+      ]
+    });
+  }
 
 
-  onLogin(){
-    console.log('Email:',this.email);
-    console.log('Password:', this.password)
+  onLogin() {
+    if (this.loginForm.valid) {
+      console.log('Credencial válida', this.loginForm.value);
+    } else {
+      console.log('Credencial inválida');
+    }
+  }
 
-    this.router.navigate(['/home']);
+  get f() {
+    return this.loginForm.controls;
   }
 
   
