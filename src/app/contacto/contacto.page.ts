@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-contacto',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactoPage implements OnInit {
 
-  constructor() { }
+  constructor(private loadingCtrl: LoadingController) { }
+
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      duration: 500,
+    });
+
+    loading.present();
+  }
 
   ngOnInit() {
   }

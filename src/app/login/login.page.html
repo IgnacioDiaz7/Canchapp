@@ -1,15 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <img src="/assets/img/Logo.png" alt="Logo" style="height: 50px; margin-right: 10px;" [routerLink]="['/home']" (click)="showLoading()">
-    <ion-title>Iniciar Sesión</ion-title>
-    <ion-buttons slot="end">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+    <div style="display: flex;">
+      <img src="/assets/img/Logo.png" alt="Logo" style="height: 50px; margin-right: 10px;" [routerLink]="['/home']"
+        (click)="showLoading()">
+      <ion-title>Iniciar Sesión</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" color="secondary">
-  
+
   <ion-card-content>
     <form (submit)="onLogin()">
       <ion-item>
@@ -23,7 +26,7 @@
       <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
     </form>
     <ion-item>
-      <ion-button fill="clear" [routerLink]="['/register']">¿No tienes una cuenta? Regístrate</ion-button>
+      <ion-button fill="clear" [routerLink]="['/registro']">¿No tienes una cuenta? Regístrate</ion-button>
     </ion-item>
   </ion-card-content>
 </ion-content>
