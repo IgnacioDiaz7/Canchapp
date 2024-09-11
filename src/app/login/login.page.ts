@@ -8,39 +8,26 @@ import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } 
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage  {
-  loginForm: FormGroup;
+export class LoginPage {
   email: string = '';
   password: string = '';
 
-  constructor(private router: Router, private loadingCtrl: LoadingController, private formBuilder: FormBuilder) { 
-    this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(6),
-          Validators.pattern('^(?=.*[A-Z])[A-Za-z0-9]+$')
-        ]
-      ]
-    });
+  constructor(private router: Router, private loadingCtrl: LoadingController) {
   }
 
 
   onLogin() {
-    if (this.loginForm.valid) {
-      console.log('Credencial válida', this.loginForm.value);
-    } else {
-      console.log('Credencial inválida');
+    if (this.email === 'admin@canchapp.cl' && this.password === '123456' ){
+      this.router.navigate(['/home']);
+      alert('Bienvenido Admin')
+    }else{
+      alert('Email o contraseña incorrecta');
     }
   }
 
-  get f() {
-    return this.loginForm.controls;
-  }
-
-  
+  onResetPassword() {
+    this.router.navigate(['/reset-password']);
+  } 
 
   async showLoading() {
     const loading = await this.loadingCtrl.create({
