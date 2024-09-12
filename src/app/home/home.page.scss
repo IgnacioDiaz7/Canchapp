@@ -1,3 +1,15 @@
-ion-content{
-  --background:gold;
+ion-content {
+  --background: gold;
+}
+
+ion-card {
+  padding: 15px;
+}
+
+ion-card {
+  img {
+    border-radius: 15px;
+    height: auto;
+    width: 100%;
+  }
 }

@@ -7,6 +7,12 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  modal:any;
+  modal2:any;
+  modal3:any;
+  modal4:any;
+  modal5:any;
+  
 
   constructor(private loadingCtrl: LoadingController) {}
 
@@ -20,5 +26,7 @@ export class HomePage {
   async canDismiss(data?: any, role?: string) {
     return role !== 'gesture';
   }
+
+  
 
 }

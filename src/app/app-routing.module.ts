@@ -27,6 +27,30 @@ const routes: Routes = [
     path: 'contacto',
     loadChildren: () => import('./contacto/contacto.module').then( m => m.ContactoPageModule)
   },
+  {
+    path: 'canchas',
+    loadChildren: () => import('./formularios/Canchas/canchas/canchas.module').then( m => m.CanchasPageModule)
+  },
+  {
+    path: 'canchas-duoc',
+    loadChildren: () => import('./formularios/Canchas/canchas-duoc/canchas-duoc.module').then( m => m.CanchasDUOCPageModule)
+  },
+  {
+    path: 'multi-vlc',
+    loadChildren: () => import('./formularios/Canchas/multi-vlc/multi-vlc.module').then( m => m.MultiVLCPageModule)
+  },
+  {
+    path: 'manquecura-vlc',
+    loadChildren: () => import('./formularios/Canchas/manquecura-vlc/manquecura-vlc.module').then( m => m.ManquecuraVLCPageModule)
+  },
+  {
+    path: 'gym-mun-quilicura',
+    loadChildren: () => import('./formularios/Canchas/gym-mun-quilicura/gym-mun-quilicura.module').then( m => m.GymMunQuilicuraPageModule)
+  },
+  {
+    path: 'gym-entretiempo',
+    loadChildren: () => import('./formularios/Canchas/gym-entretiempo/gym-entretiempo.module').then( m => m.GymEntretiempoPageModule)
+  },
   
 ];
 
