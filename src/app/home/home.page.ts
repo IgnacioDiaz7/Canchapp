@@ -12,6 +12,7 @@ export class HomePage {
   modal3:any;
   modal4:any;
   modal5:any;
+  modal6:any;
   
 
   constructor(private loadingCtrl: LoadingController) {}

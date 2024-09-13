@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
@@ -13,45 +14,24 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'canchas',
-    loadChildren: () => import('./canchas/canchas.module').then( m => m.CanchasPageModule)
+    loadChildren: () => import('./canchas/canchas.module').then(m => m.CanchasPageModule)
   },
   {
     path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+    loadChildren: () => import('./registro/registro.module').then(m => m.RegistroPageModule)
   },
   {
     path: 'contacto',
-    loadChildren: () => import('./contacto/contacto.module').then( m => m.ContactoPageModule)
+    loadChildren: () => import('./contacto/contacto.module').then(m => m.ContactoPageModule)
   },
   {
-    path: 'canchas',
-    loadChildren: () => import('./formularios/Canchas/canchas/canchas.module').then( m => m.CanchasPageModule)
+    path: 'reset-password',
+    component: ResetPasswordComponent
   },
-  {
-    path: 'canchas-duoc',
-    loadChildren: () => import('./formularios/Canchas/canchas-duoc/canchas-duoc.module').then( m => m.CanchasDUOCPageModule)
-  },
-  {
-    path: 'multi-vlc',
-    loadChildren: () => import('./formularios/Canchas/multi-vlc/multi-vlc.module').then( m => m.MultiVLCPageModule)
-  },
-  {
-    path: 'manquecura-vlc',
-    loadChildren: () => import('./formularios/Canchas/manquecura-vlc/manquecura-vlc.module').then( m => m.ManquecuraVLCPageModule)
-  },
-  {
-    path: 'gym-mun-quilicura',
-    loadChildren: () => import('./formularios/Canchas/gym-mun-quilicura/gym-mun-quilicura.module').then( m => m.GymMunQuilicuraPageModule)
-  },
-  {
-    path: 'gym-entretiempo',
-    loadChildren: () => import('./formularios/Canchas/gym-entretiempo/gym-entretiempo.module').then( m => m.GymEntretiempoPageModule)
-  },
-  
 ];
 
 @NgModule({
