@@ -17,10 +17,6 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
-    path: 'canchas',
-    loadChildren: () => import('./canchas/canchas.module').then(m => m.CanchasPageModule)
-  },
-  {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then(m => m.RegistroPageModule)
   },
